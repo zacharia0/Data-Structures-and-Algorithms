@@ -1,8 +1,3 @@
-from hashlib import new
-
-from matplotlib.pyplot import get
-
-
 class Node:
     """The Node class creates a node""" 
     def __init__(self,value):
