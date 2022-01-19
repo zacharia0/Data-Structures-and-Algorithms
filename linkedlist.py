@@ -107,10 +107,26 @@ class LinkList:
         return True  
 
 
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None 
+        if index == 0:
+            return self.prepop()
+        if index == self.length:
+            return self.pop()  
+        pre = self.get(index - 1)
+        temp = pre.next 
+        pre.next = temp.next
+        temp.next = None 
+        self.length -= 1
+        return temp 
 
 
 
 
 
-
-    
+my = LinkList(0)
+my.append(1)
+my.append(2)
+my.remove(1)
+my.print_list()
