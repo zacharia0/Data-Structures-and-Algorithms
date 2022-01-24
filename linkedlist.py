@@ -1,3 +1,5 @@
+
+
 class Node:
     """The Node class creates a node""" 
     def __init__(self,value):
@@ -89,6 +91,15 @@ class LinkList:
             return True 
         return False 
 
+    def count(self, value):
+        counts = 0
+        current = self.head 
+        while (current is not None):
+            if current.value == value:
+                counts += 1 
+            current = current.next 
+        return counts
+
     
 
     def insert(self, index, value):
@@ -121,12 +132,25 @@ class LinkList:
         self.length -= 1
         return temp 
 
-
-
-
+    def reverse(self):
+        temp = self.head 
+        self.head = self.tail 
+        self.tail = temp 
+        after = temp.next 
+        before = None 
+        for _ in range(self.length):
+            after = temp.next 
+            temp.next = before 
+            before = temp 
+            temp = after 
 
 my = LinkList(0)
 my.append(1)
 my.append(2)
-my.remove(1)
+my.append(3)
+my.set_value(0,1)
+my.reverse()
 my.print_list()
+print(f"number of times {my.count(1)}")
+
+
