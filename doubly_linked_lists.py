@@ -110,3 +110,29 @@ class DoublyLinkedList:
             self.head = new_node
         self.length += 1 
         return True 
+
+
+    def prepop(self):
+        if self.length == 0:
+            return None 
+        temp = self.head
+        if self.length == 1:
+            self.tail = None 
+            self.head = None 
+         
+        else:
+            self.head = self.head.next 
+            self.head.prev = None 
+            temp.next = None 
+        self.length -= 1 
+        return temp 
+         
+
+
+my = DoublyLinkedList(0)
+my.append(1)
+my.append(2)
+my.prepop()
+my.prepop()
+my.prepop()
+my.print_list()
