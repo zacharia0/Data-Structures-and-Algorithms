@@ -123,7 +123,7 @@ class LinkList:
             return None 
         if index == 0:
             return self.prepop()
-        if index == self.length:
+        if index == self.length - 1:
             return self.pop()  
         pre = self.get(index - 1)
         temp = pre.next 
