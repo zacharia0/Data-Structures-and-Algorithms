@@ -84,3 +84,15 @@ class BinarySearchTree:
         return False  
 
 
+    def minimum_value(self, current_node):
+        while current_node.left is not None:
+            current = current_node.left 
+        return current_node
+
+
+
+
+
+
+
+
