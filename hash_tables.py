@@ -14,3 +14,11 @@ class HashTable:
             print(f"{i} : {val}")
 
 
+    def set_item(self, key, value):
+        index = self.__hash(key)
+        if self.data_map[index] == None:
+            self.data_map[index] = []
+        self.data_map[index].append([key, value])
+
+
+
