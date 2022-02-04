@@ -47,7 +47,7 @@ class BinarySearchTree:
     def minimum_value_left(self, current_node):
         while current_node.left is not None:
             current_node = current_node.left 
-        return current_node
+        return current_node.value
 
     def maximum_value_right(self, current_node):
         while current_node.right is not None:
