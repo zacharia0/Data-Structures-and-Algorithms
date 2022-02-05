@@ -36,7 +36,6 @@ class HashTable:
             if self.data_map[i] is not None:
                 for j in range(len(self.data_map[i])):
                     all_keys.append(self.data_map[i][j][0])
-
         return all_keys
 
 
