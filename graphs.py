@@ -20,10 +20,32 @@ class Graph:
             return True 
         return False
 
+    def remove_edge(self, vertex1, vertex2):
+        if vertex1 in self.adjacency_list.keys() and vertex2 in self.adjacency_list.keys():
+            try:
+                self.adjacency_list[vertex1].remove(vertex2)
+                self.adjacency_list[vertex2].remove(vertex1)
+                return True
+            except ValueError:
+                pass 
+        return False 
+
+
+   
 my = Graph()
 
 my.add_vertex("A")
 my.add_vertex("B")
+my.add_vertex("C")
+my.add_vertex("D")
+
 
 my.add_edge("A","B")
+my.add_edge("C","D")
+my.add_edge("C","A")
+my.add_edge("B","D")
+my.print_graph()
+print("________________________")
+my.remove_edge("A","B")
+my.remove_edge("A","D")
 my.print_graph()
